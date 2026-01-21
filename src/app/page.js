@@ -5,6 +5,8 @@
 // import Footer from "@/components/Footer";
 
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
 
 // export const metadata = {
 //     title: 'La nostra storia',
@@ -24,6 +26,8 @@ export default function Home() {
     return (
         <>
             <Hero />
+            <About />
+            <Services />
             OK
 
             <div className="h-[5000px]"></div>
