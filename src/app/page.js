@@ -1,10 +1,10 @@
-// import Navbar from "@/components/Navbar";
-// import Hero from "@/components/Hero";
 // import About from "@/components/About";
 // import Projects from "@/components/Projects";
 // import Services from "@/components/Services";
 // import Contact from "@/components/Contact";
 // import Footer from "@/components/Footer";
+
+import Hero from "@/components/Hero";
 
 // export const metadata = {
 //     title: 'La nostra storia',
@@ -23,6 +23,7 @@
 export default function Home() {
     return (
         <>
+            <Hero />
             OK
 
             <div className="h-[5000px]"></div>
