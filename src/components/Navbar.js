@@ -44,12 +44,8 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-16 px-4">
                     {/* Logo */}
                     <motion.a
-                        href="#"
+                        href="/#hero"
                         className="text-xl font-bold text-gradient-primary"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                        }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
