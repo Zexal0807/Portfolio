@@ -1,26 +1,216 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-primary-accent: var(--primary-accent);
+    --color-primary-accent-foreground: var(--primary-accent-foreground);
+
+    --color-secondary-accent: var(--secondary-accent);
+    --color-secondary-accent-foreground: var(--secondary-accent-foreground);
+
+    --color-tertiary-accent: var(--tertiary-accent);
+    --color-tertiary-accent-foreground: var(--tertiary-accent-foreground);
+
+    --color-quaternary-accent: var(--quaternary-accent);
+    --color-quaternary-accent-foreground: var(--quaternary-accent-foreground);
+
+    --color-purple-accent: var(--purple-accent);
+    --color-purple-accent-foreground: var(--purple-accent-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer utilities {
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    @keyframes float-delayed {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+    @keyframes bounce-slow {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .animate-accordion-down {
+        animation: accordion-down 0.2s ease-out;
+    }
+    .animate-accordion-up {
+        animation: accordion-up 0.2s ease-out;
+    }
+    .animate-fade-in {
+        animation: fade-in 0.6s ease-out forwards;
+    }
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-float-delayed {
+        animation: float-delayed 8s ease-in-out infinite 1s;
+    }
+    .animate-bounce-slow {
+        animation: bounce-slow 3s ease-in-out infinite;
+    }
+}
+
+:root {
+    /* Professional Dark Theme - your variables here */
+    --background: #0b0d13;
+    --foreground: #fafafa;
+
+    --card: #131620;
+    --card-foreground: #fafafa;
+
+    --popover: #131620;
+    --popover-foreground: #fafafa;
+
+    --primary: #fafafa;
+    --primary-foreground: #0b0d13;
+
+    /* Electric Blue - Primary Accent */
+    --primary-accent: #257bf4;
+    --primary-accent-foreground: #ffffff;
+
+    /* Neon Magenta - Secondary Accent */
+    --secondary-accent: #ee2bad;
+    --secondary-accent-foreground: #ffffff;
+
+    /* Emerald - Tertiary (Success) */
+    --tertiary-accent: #1dc98f;
+    --tertiary-accent-foreground: #ffffff;
+
+    /* Amber/Orange */
+    --quaternary-accent: #f99e1f;
+    --quaternary-accent-foreground: #ffffff;
+
+    /* Purple */
+    --purple-accent: #7e36e2;
+    --purple-accent-foreground: #ffffff;
+
+    --secondary: #1f222e;
+    --secondary-foreground: #fafafa;
+
+    --muted: #272a35;
+    --muted-foreground: #818798;
+
+    --accent: #257bf4;
+    --accent-foreground: #ffffff;
+
+    --destructive: #e83030;
+    --destructive-foreground: #fafafa;
+
+    --border: #272a35;
+    --input: #272a35;
+    --ring: #257bf4;
+
+    --radius: 0.625rem;
+
+    /* Section backgrounds */
+    --section-hero: #090b11;
+    --section-about: #0f111a;
+    --section-projects: #0c1017;
+    --section-services: #0f101a;
+    --section-contact: #0a0b10;
+
+    --sidebar-background: #0f121a;
+    --sidebar-foreground: #fafafa;
+    --sidebar-primary: #257bf4;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #1b1e28;
+    --sidebar-accent-foreground: #fafafa;
+    --sidebar-border: #21232c;
+    --sidebar-ring: #257bf4;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
 }
