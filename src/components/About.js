@@ -1,26 +1,28 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPostgresql, SiMongodb, SiGit, SiDocker, SiTailwindcss, SiNextdotjs, SiPhp, SiNeo4J } from "react-icons/si";
+import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPostgresql, SiMongodb, SiGit, SiDocker, SiTailwindcss, SiNextdotjs, SiPhp, SiNeo4J, SiSqlite, SiMysql } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { Database } from "lucide-react";
-import Link from "next/link";
+import Image from "next/image";
 
 const skills = [
     { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", bgColor: "rgba(255, 255, 255, 0.1)" },
     { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", bgColor: "rgba(247, 223, 30, 0.1)" },
     { name: "React", icon: SiReact, color: "#61DAFB", bgColor: "rgba(97, 218, 251, 0.1)" },
     { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB", bgColor: "rgba(97, 218, 251, 0.1)" },
-    { name: "TypeScript", icon: SiTypescript, color: "#3178C6", bgColor: "rgba(49, 120, 198, 0.1)" },
+    // { name: "TypeScript", icon: SiTypescript, color: "#3178C6", bgColor: "rgba(49, 120, 198, 0.1)" },
     { name: "Node.js", icon: SiNodedotjs, color: "#339933", bgColor: "rgba(51, 153, 51, 0.1)" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", bgColor: "rgba(65, 105, 225, 0.1)" },
+    { name: "Sqlite", icon: SiSqlite, color: "#57B1E3", bgColor: "rgba(97, 218, 251, 0.1)" },
+    { name: "MySql", icon: SiMysql, color: "#DC8700", bgColor: "rgba(247, 223, 30, 0.1)" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#2F5E8D", bgColor: "rgba(120, 150, 251, 0.1)" },
     { name: "MongoDB", icon: SiMongodb, color: "#47A248", bgColor: "rgba(71, 162, 72, 0.1)" },
-    { name: "Neo4J", icon: SiNeo4J, color: "#47A248", bgColor: "rgba(71, 162, 72, 0.1)" },
-    { name: "REST API", icon: Database, color: "#FF6B6B", bgColor: "rgba(255, 107, 107, 0.1)" },
+    { name: "Neo4J", icon: SiNeo4J, color: "#FFFFFF", bgColor: "rgba(255, 255, 255, 0.1)" },
+    // { name: "REST API", icon: Database, color: "#FF6B6B", bgColor: "rgba(255, 107, 107, 0.1)" },
     { name: "PHP", icon: SiPhp, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
-    { name: "Git", icon: SiGit, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
+    // { name: "Git", icon: SiGit, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
     { name: "Docker", icon: SiDocker, color: "#2496ED", bgColor: "rgba(36, 150, 237, 0.1)" },
-    { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)" },
+    // { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)" },
 ];
 
 const itemVariants = {
@@ -64,10 +66,14 @@ const About = () => {
                             className="md:col-span-2 flex justify-center"
                         >
                             <div className="relative">
-                                <div className="w-52 h-52 md:w-72 md:h-72 rounded-2xl bg-gradient-to-br from-tertiary-accent via-primary-accent to-secondary-accent p-1 shadow-2xl shadow-primary-accent/20">
-                                    <div className="w-full h-full rounded-2xl bg-card flex items-center justify-center">
-                                        <span className="text-7xl md:text-8xl">👨‍💻</span>
-                                    </div>
+                                <div className="w-52 h-52 md:w-72 md:h-72 rounded-2xl bg-gradient-to-br from-tertiary-accent via-primary-accent to-secondary-accent shadow-2xl shadow-primary-accent/20">
+                                    <Image
+                                        className="w-full h-full rounded-2xl flex items-center justify-center p-1"
+                                        src="/me.jpg"
+                                        alt="Roberto Gallina"
+                                        style={{ objectFit: "cover" }}
+                                        fill
+                                    />
                                 </div>
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}

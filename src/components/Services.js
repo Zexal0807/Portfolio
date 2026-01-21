@@ -8,13 +8,13 @@ export const services = [
     {
         id: "web",
         title: "Sviluppo Web",
-        description: "Creazione di applicazioni web moderne, responsive e performanti utilizzando le tecnologie più avanzate.",
+        description: "Creazione di applicazioni Web moderne, responsive e performanti utilizzando le tecnologie più avanzate.",
         icon: Code,
         features: [
+            "Dashboard e portali aziendali",
             "Single Page Applications (SPA)",
             "Progressive Web Apps (PWA)",
-            "Dashboard e portali aziendali",
-            "E-commerce personalizzati",
+            "WordPress",
         ],
     },
     {
@@ -25,8 +25,8 @@ export const services = [
         features: [
             "App iOS e Android",
             "UI/UX ottimizzata per mobile",
-            "Integrazione API e servizi",
-            "Notifiche push e geolocalizzazione",
+            // "Integrazione API e servizi",
+            // "Notifiche push e geolocalizzazione",
         ],
     },
     {
@@ -35,10 +35,10 @@ export const services = [
         description: "Progettazione e implementazione di database scalabili e API robuste per supportare le tue applicazioni.",
         icon: Database,
         features: [
-            "Progettazione database relazionali",
-            "Database NoSQL (MongoDB)",
-            "API REST e GraphQL",
-            "Ottimizzazione performance",
+            "Progettazione database Relazionali",
+            "Database NoSQL",
+            // "API REST e GraphQL",
+            // "Ottimizzazione performance",
         ],
     },
     {
@@ -48,9 +48,10 @@ export const services = [
         icon: Users,
         features: [
             "Analisi requisiti e fattibilità",
-            "Code review e refactoring",
             "Formazione team di sviluppo",
-            "Migrazione sistemi legacy",
+            // "Code review e refactoring",
+            // "Migrazione sistemi legacy",
+            "Analisi progetti IoT"
         ],
     },
 ];

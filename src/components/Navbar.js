@@ -53,7 +53,7 @@ const Navbar = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Portfolio
+                        Roberto Gallina
                     </motion.a>
 
                     {/* Desktop Menu */}
@@ -79,7 +79,7 @@ const Navbar = () => {
                         >
                             <Button
                                 className="bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white shadow-lg shadow-primary-accent/25 m-5 cursor-pointer"
-                                href="#contatti"
+                                onClick={() => handleNavClick("#contatti")}
                             >
                                 Contattami
                             </Button>
@@ -132,7 +132,7 @@ const Navbar = () => {
                                 >
                                     <Button
                                         className="mt-2 w-75 bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white cursor-pointer mb-2"
-                                        href="#contatti"
+                                        onClick={() => handleNavClick("#contatti")}
                                     >
                                         Contattami
                                     </Button>

@@ -91,48 +91,18 @@ const Contact = () => {
                                 </div>
                                 <p className="text-white/90 mb-8">
                                     Sono sempre interessato a nuove sfide e collaborazioni.
-                                    Che tu abbia bisogno di un'app, un sito web o una consulenza,
-                                    sono qui per aiutarti.
+                                    <br />
+                                    Che tu abbia bisogno di un'app, un sito web o una consulenza, sono qui per aiutarti.
                                 </p>
 
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-4 p-3 bg-white/10 rounded-xl backdrop-blur-sm">
                                         <Mail className="w-5 h-5" />
-                                        <span className="text-sm">email@example.com</span>
-                                    </div>
-                                    <div className="flex items-center gap-4 p-3 bg-white/10 rounded-xl backdrop-blur-sm">
-                                        <MapPin className="w-5 h-5" />
-                                        <span className="text-sm">Italia</span>
+                                        <span className="text-sm">gallinar00@gmail.com</span>
                                     </div>
                                 </div>
                             </CardContent>
                         </Card>
-
-                        {/* Social Links */}
-                        <div>
-                            <h4 className="text-sm font-medium text-muted-foreground mb-4">
-                                Seguimi sui social
-                            </h4>
-                            <div className="flex gap-3">
-                                {socialLinks.map((social) => {
-                                    const Icon = social.icon;
-                                    return (
-                                        <motion.a
-                                            key={social.label}
-                                            href={social.href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            whileHover={{ scale: 1.1, y: -2 }}
-                                            whileTap={{ scale: 0.95 }}
-                                            className={`w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center text-muted-foreground ${social.color} hover:border-primary-accent/50 transition-colors`}
-                                            aria-label={social.label}
-                                        >
-                                            <Icon className="w-5 h-5" />
-                                        </motion.a>
-                                    );
-                                })}
-                            </div>
-                        </div>
                     </motion.div>
 
                     {/* Contact Form */}
@@ -210,7 +180,7 @@ const Contact = () => {
                                             ) : (
                                                 <>
                                                     <Send className="w-4 h-4 mr-2" />
-                                                    Invia messaggio
+                                                    Inviami messaggio
                                                 </>
                                             )}
                                         </Button>
