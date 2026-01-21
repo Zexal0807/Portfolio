@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
-// import { Button } from "@/components/ui/button";
 import TypewriterText from "@/components/TypewriterText";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const skills = [
-    "Sviluppatore React & NextJS",
+    "Sviluppatore NextJS",
     "React Native Developer",
     "Database Architect",
     "Full-Stack Developer",
@@ -126,7 +125,8 @@ const Hero = () => {
                         className="text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-10"
                     >
                         Trasformo idee in soluzioni digitali innovative.
-                        Specializzato in React, React Native e architetture database scalabili.
+                        <br />
+                        Specializzato in NextJS, React Native e architetture Database (relazionali e non).
                     </motion.p>
 
                     <motion.div
@@ -140,7 +140,7 @@ const Hero = () => {
                             className="bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white font-semibold px-8 shadow-lg shadow-primary-accent/25 cursor-pointer"
                             onClick={() => scrollToSection("progetti")}
                         >
-                            Scopri i miei progetti
+                            Scopri alcuni dei miei progetti
                         </Button>
                         <Button
                             size="lg"

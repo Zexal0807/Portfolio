@@ -1,20 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion";
-import {
-    SiJavascript,
-    SiTypescript,
-    SiReact,
-    SiNodedotjs,
-    SiPostgresql,
-    SiMongodb,
-    SiGit,
-    SiDocker,
-    SiTailwindcss,
-    SiNextdotjs
-} from "react-icons/si";
+import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPostgresql, SiMongodb, SiGit, SiDocker, SiTailwindcss, SiNextdotjs, SiPhp, SiNeo4J } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { Database } from "lucide-react";
+import Link from "next/link";
 
 const skills = [
     { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", bgColor: "rgba(255, 255, 255, 0.1)" },
@@ -25,12 +15,13 @@ const skills = [
     { name: "Node.js", icon: SiNodedotjs, color: "#339933", bgColor: "rgba(51, 153, 51, 0.1)" },
     { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", bgColor: "rgba(65, 105, 225, 0.1)" },
     { name: "MongoDB", icon: SiMongodb, color: "#47A248", bgColor: "rgba(71, 162, 72, 0.1)" },
+    { name: "Neo4J", icon: SiNeo4J, color: "#47A248", bgColor: "rgba(71, 162, 72, 0.1)" },
     { name: "REST API", icon: Database, color: "#FF6B6B", bgColor: "rgba(255, 107, 107, 0.1)" },
+    { name: "PHP", icon: SiPhp, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
     { name: "Git", icon: SiGit, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
     { name: "Docker", icon: SiDocker, color: "#2496ED", bgColor: "rgba(36, 150, 237, 0.1)" },
     { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)" },
 ];
-
 
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -99,19 +90,17 @@ const About = () => {
                             className="md:col-span-3 space-y-5"
                         >
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Sono uno <strong className="text-tertiary-accent">sviluppatore full-stack</strong> con oltre 5 anni di esperienza
-                                nella creazione di applicazioni web e mobile. La mia passione è trasformare
-                                idee complesse in soluzioni digitali eleganti e funzionali.
+                                Sono un <strong className="text-tertiary-accent">docente di informatica</strong> con la passione per la creazione di applicazioni Web e Mobile eleganti e funzionali.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Mi specializzo in <strong className="text-primary-accent">React</strong> e <strong className="text-primary-accent">React Native</strong> per
-                                il frontend, mentre lato backend lavoro con Node.js e database sia SQL che NoSQL.
-                                Offro anche <strong className="text-secondary-accent">consulenza informatica</strong> per aiutare
-                                aziende e startup a prendere le decisioni tecnologiche migliori.
+                                Con oltre 5 anni di esperienza mi sono specializzo in <strong className="text-primary-accent">NextJS</strong> per il frontend e mentre lato backend lavoro con <strong className="text-primary-accent">NodeJS</strong> e database sia Relazionali (MySql, PostgreSQL, Sqlite) che NoSQL (MongoDB, Neo4j)
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Credo nel codice pulito, nell'architettura scalabile e nella collaborazione
-                                continua con i clienti per raggiungere risultati eccellenti.
+                                Offro <strong className="text-secondary-accent">consulenza informatica</strong> per aiutare
+                                aziende e startup a prendere le decisioni tecnologiche migliori, supportarle nella creazione e pubblicazione delle loro WebApp.
+                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed">
+                                Credo fortemente, oggi più che mai, che un programma non deve essere solo funzionante, ma un professionista del settore deve produrre un codice pulito, predisposto alle modifiche e sia supportato fino alla sua pubblicazione o anche oltre.
                             </p>
                         </motion.div>
                     </div>

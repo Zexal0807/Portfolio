@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
     { label: "Chi Sono", href: "#chi-sono" },
@@ -38,8 +37,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className={`fixed top-0 left-0 right-0 z-50  ${isScrolled
                 ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-background/10"
-                : "bg-transparent"
-                }`
+                : "bg-transparent"}`
             }
         >
             <div className="container">
