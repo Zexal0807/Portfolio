@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
 // import { Button } from "@/components/ui/button";
 import TypewriterText from "@/components/TypewriterText";
+import { Button } from "./ui/button";
 
 const skills = [
     "Sviluppatore React & NextJS",
@@ -134,21 +135,21 @@ const Hero = () => {
                         transition={{ delay: 0.9, duration: 0.6 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
-                        <button
+                        <Button
                             size="lg"
-                            className="bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white font-semibold px-8 shadow-lg shadow-primary-accent/25"
+                            className="bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white font-semibold px-8 shadow-lg shadow-primary-accent/25 cursor-pointer"
                             onClick={() => scrollToSection("progetti")}
                         >
                             Scopri i miei progetti
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             size="lg"
                             variant="outline"
-                            className="border-2 border-foreground/20 hover:bg-foreground/10 hover:border-primary-accent/50"
+                            className="border-2 border-foreground/20 hover:bg-foreground/10 hover:border-primary-accent/50 cursor-pointer"
                             onClick={() => scrollToSection("contatti")}
                         >
                             Contattami
-                        </button>
+                        </Button>
                     </motion.div>
                 </motion.div>
             </div>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const navItems = [
     { label: "Chi Sono", href: "#chi-sono" },
@@ -41,8 +42,8 @@ const Navbar = () => {
                 }`
             }
         >
-            <div className="container px-4">
-                <div className="flex items-center justify-between h-16">
+            <div className="container">
+                <div className="flex items-center justify-between h-16 px-4">
                     {/* Logo */}
                     <motion.a
                         href="#"
@@ -78,12 +79,12 @@ const Navbar = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <Link
-                                className="bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white shadow-lg shadow-primary-accent/25 m-5"
+                            <Button
+                                className="bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white shadow-lg shadow-primary-accent/25 m-5 cursor-pointer"
                                 href="#contatti"
                             >
                                 Contattami
-                            </Link>
+                            </Button>
                         </motion.div>
                     </div>
 
@@ -103,14 +104,14 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Menu */}
-                <AnimatePresence>
+                <AnimatePresence >
                     {isMobileMenuOpen && (
                         <motion.div
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="md:hidden py-4 border-t border-border/50 overflow-hidden"
+                            className="md:hidden border-t border-border/50 overflow-hidden bg-background"
                         >
                             <div className="flex flex-col gap-2">
                                 {navItems.map((item, index) => (
@@ -129,13 +130,14 @@ const Navbar = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.4 }}
+                                    className="flex justify-center"
                                 >
-                                    <Link
-                                        className="mt-2 w-full bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white"
+                                    <Button
+                                        className="mt-2 w-75 bg-gradient-to-r from-primary-accent to-secondary-accent hover:opacity-90 text-white cursor-pointer mb-2"
                                         href="#contatti"
                                     >
                                         Contattami
-                                    </Link>
+                                    </Button>
                                 </motion.div>
                             </div>
                         </motion.div>
