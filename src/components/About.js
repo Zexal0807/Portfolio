@@ -1,38 +1,23 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPostgresql, SiMongodb, SiGit, SiDocker, SiTailwindcss, SiNextdotjs, SiPhp, SiNeo4J, SiSqlite, SiMysql } from "react-icons/si";
-import { TbBrandReactNative } from "react-icons/tb";
-import { Database } from "lucide-react";
 import Image from "next/image";
+import { SKILLS } from "@/data/languages";
 
 const skills = [
-    { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", bgColor: "rgba(255, 255, 255, 0.1)" },
-    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", bgColor: "rgba(247, 223, 30, 0.1)" },
-    { name: "React", icon: SiReact, color: "#61DAFB", bgColor: "rgba(97, 218, 251, 0.1)" },
-    { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB", bgColor: "rgba(97, 218, 251, 0.1)" },
-    // { name: "TypeScript", icon: SiTypescript, color: "#3178C6", bgColor: "rgba(49, 120, 198, 0.1)" },
-    { name: "Node.js", icon: SiNodedotjs, color: "#339933", bgColor: "rgba(51, 153, 51, 0.1)" },
-    { name: "Sqlite", icon: SiSqlite, color: "#57B1E3", bgColor: "rgba(97, 218, 251, 0.1)" },
-    { name: "MySql", icon: SiMysql, color: "#DC8700", bgColor: "rgba(247, 223, 30, 0.1)" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "#2F5E8D", bgColor: "rgba(120, 150, 251, 0.1)" },
-    { name: "MongoDB", icon: SiMongodb, color: "#47A248", bgColor: "rgba(71, 162, 72, 0.1)" },
-    { name: "Neo4J", icon: SiNeo4J, color: "#FFFFFF", bgColor: "rgba(255, 255, 255, 0.1)" },
-    // { name: "REST API", icon: Database, color: "#FF6B6B", bgColor: "rgba(255, 107, 107, 0.1)" },
-    { name: "PHP", icon: SiPhp, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
-    // { name: "Git", icon: SiGit, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)" },
-    { name: "Docker", icon: SiDocker, color: "#2496ED", bgColor: "rgba(36, 150, 237, 0.1)" },
-    // { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)" },
+    SKILLS.NEXTJS,
+    SKILLS.JAVASCRIPT,
+    SKILLS.REACT,
+    SKILLS.REACT_NATIVE,
+    SKILLS.NODEJS,
+    SKILLS.SQLITE,
+    SKILLS.MYSQL,
+    SKILLS.POSTGRESQL,
+    SKILLS.MONGODB,
+    SKILLS.NEO4J,
+    SKILLS.PHP,
+    SKILLS.DOCKER
 ];
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5 },
-    },
-};
 
 const About = () => {
     return (
@@ -128,7 +113,14 @@ const About = () => {
                         className="mt-16"
                     >
                         <motion.h3
-                            variants={itemVariants}
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 0.5 },
+                                },
+                            }}
                             className="text-xl font-semibold text-foreground mb-8 text-center"
                         >
                             Le mie <span className="text-gradient-primary">competenze</span>
@@ -139,7 +131,14 @@ const About = () => {
                                 return (
                                     <motion.div
                                         key={skill.name}
-                                        variants={itemVariants}
+                                        variants={{
+                                            hidden: { opacity: 0, y: 20 },
+                                            visible: {
+                                                opacity: 1,
+                                                y: 0,
+                                                transition: { duration: 0.5 },
+                                            },
+                                        }}
                                         whileHover={{ scale: 1.05, y: -5 }}
                                         className="flex flex-col items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary-accent/50 transition-colors cursor-default"
                                         style={{ backgroundColor: skill.bgColor }}

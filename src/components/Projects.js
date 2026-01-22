@@ -1,12 +1,19 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Filter } from "lucide-react";
-import { tags } from "@/data/tags";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-// import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/ProjectCard";
+
+import { projects } from '@/data/projects'
+import { TAGS } from "@/data/languages";
+
+const tags = [
+    TAGS.NEXTJS,
+    TAGS.NODEJS
+]
 
 
 const Projects = () => {
@@ -22,11 +29,14 @@ const Projects = () => {
 
     const clearFilters = () => setSelectedTags([]);
 
-    const projects = []
+    const [filteredProjects, setFilteredProjects] = useState([]);
 
-    const filteredProjects = selectedTags.length === 0
-        ? projects
-        : projects.filter((project) => selectedTags.some((tag) => project.tags.includes(tag)));
+    useEffect(() => {
+        if (selectedTags.length === 0)
+            setFilteredProjects(projects)
+        else
+            setFilteredProjects(projects.filter((project) => selectedTags.some((tag) => project.tags.includes(tag))))
+    }, [projects, selectedTags]);
 
     return (
         <section id="progetti" className="py-24 bg-section-projects relative overflow-hidden">
@@ -69,7 +79,7 @@ const Projects = () => {
                     <div className="flex flex-wrap gap-2 justify-center">
                         {tags.map((tag) => (
                             <motion.div
-                                key={tag}
+                                key={tag.name}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -81,7 +91,7 @@ const Projects = () => {
                                     }
                                     onClick={() => toggleTag(tag)}
                                 >
-                                    {tag}
+                                    {tag.name}
                                 </Badge>
                             </motion.div>
                         ))}
@@ -108,7 +118,7 @@ const Projects = () => {
                 <p>{selectedTags.join(" - ")}</p>
 
                 {/* Projects Grid */}
-                {/* <motion.div
+                <motion.div
                     variants={{
                         hidden: { opacity: 0 },
                         visible: {
@@ -124,7 +134,7 @@ const Projects = () => {
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     {filteredProjects.map((project) => (
-                        <motion.div key={project.id} variants={{
+                        <motion.div key={project.slug} variants={{
                             hidden: { opacity: 0, y: 30 },
                             visible: {
                                 opacity: 1,
@@ -135,7 +145,7 @@ const Projects = () => {
                             <ProjectCard project={project} />
                         </motion.div>
                     ))}
-                </motion.div> */}
+                </motion.div>
 
                 {/* {filteredProjects.length === 0 && (
                     <motion.div

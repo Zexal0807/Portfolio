@@ -1,14 +1,11 @@
-export const projects = {
-    birolixcostruire: {
+export const projects = [
+    {
+        slug: "birolixcostruire",
         title: "BiroliXCostruire",
         tags: []
     }
-};
+];
 
 export async function getProgetto(slug) {
-
-    return projects[slug] || null;
-
-    // return null;
-    return { ok: 1 };
+    return projects.find(p => p.slug == slug)
 }
