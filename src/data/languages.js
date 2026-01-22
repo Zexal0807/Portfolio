@@ -46,7 +46,7 @@ const DATA = {
 // };
 
 
-let skills = DATA;
+let skills = { ...DATA };
 Object.entries(skills).forEach(([k, v]) => {
     skills[k] = {
         name: v.name,
@@ -58,7 +58,12 @@ Object.entries(skills).forEach(([k, v]) => {
 
 export const SKILLS = skills;
 
+let tags = { ...DATA };
+Object.entries(skills).forEach(([k, v]) => {
+    tags[k] = {
+        name: v.name,
+        tagClasses: v.tagClasses
+    }
+})
+export const TAGS = tags;
 
-
-
-export const TAGS = DATA;

@@ -21,25 +21,17 @@ const tagColors = {
 };
 
 const ProjectCard = ({ project }) => {
-    // const navigate = useNavigate();
-
-    return (
-        <div>
-            {JSON.stringify(project)}
-        </div>
-    )
 
     return (
         <motion.div
             whileHover={{ y: -8 }}
             transition={{ duration: 0.3 }}
         >
-            <Card className="group overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 hover:border-quaternary-accent/50 transition-all duration-300 hover:shadow-xl hover:shadow-quaternary-accent/10 h-full flex flex-col">
-                <Link href="">
+            <Link href={`/progetti/${project.slug}`}>
+                <Card className="group overflow-hidden bg-card/80 backdrop-blur-sm border-border/50 hover:border-quaternary-accent/50 transition-all duration-300 hover:shadow-xl hover:shadow-quaternary-accent/10 h-full flex flex-col">
                     {/* Image */}
                     <div
                         className="relative h-48 bg-gradient-to-br from-quaternary-accent/20 to-purple-accent/20 overflow-hidden cursor-pointer"
-                        onClick={() => navigate(`/progetto/${project.id}`)}
                     >
                         <img
                             src={project.images[0]}
@@ -50,15 +42,10 @@ const ProjectCard = ({ project }) => {
 
                         {/* Status badge */}
                         <div className="absolute top-3 right-3">
-                            {project.isPublished ? (
+                            {project.isPublished && (
                                 <Badge className="bg-tertiary-accent/90 text-tertiary-accent-foreground border-0 shadow-lg">
                                     <span className="w-2 h-2 bg-white rounded-full mr-1.5 animate-pulse" />
-                                    Live
-                                </Badge>
-                            ) : (
-                                <Badge variant="secondary" className="bg-card/90 backdrop-blur-sm">
-                                    <ImageIcon className="w-3 h-3 mr-1.5" />
-                                    Preview
+                                    Progetto pubblicato
                                 </Badge>
                             )}
                         </div>
@@ -74,7 +61,7 @@ const ProjectCard = ({ project }) => {
                     <CardContent className="p-5 flex-grow">
                         <h3
                             className="text-xl font-semibold text-foreground mb-2 group-hover:text-quaternary-accent transition-colors cursor-pointer"
-                            onClick={() => navigate(`/progetto/${project.id}`)}
+                        // onClick={() => navigate(`/progetto/${project.id}`)}
                         >
                             {project.title}
                         </h3>
@@ -86,11 +73,11 @@ const ProjectCard = ({ project }) => {
                         <div className="flex flex-wrap gap-1.5">
                             {project.tags.slice(0, 3).map((tag) => (
                                 <Badge
-                                    key={tag}
+                                    key={tag.name}
                                     variant="outline"
-                                    className={`text-xs ${tagColors[tag] || "bg-muted text-muted-foreground"}`}
+                                    className={`text-xs ${tag.tagClasses || "bg-muted text-muted-foreground"}`}
                                 >
-                                    {tag}
+                                    {tag.name}
                                 </Badge>
                             ))}
                             {project.tags.length > 3 && (
@@ -100,30 +87,8 @@ const ProjectCard = ({ project }) => {
                             )}
                         </div>
                     </CardContent>
-
-                    <CardFooter className="p-5 pt-0 flex gap-2">
-                        <Button
-                            variant="outline"
-                            className="flex-1 border-quaternary-accent/50 hover:bg-quaternary-accent/10 hover:border-quaternary-accent"
-                            onClick={() => navigate(`/progetto/${project.id}`)}
-                        >
-                            <ArrowRight className="w-4 h-4 mr-2" />
-                            Scopri di più
-                        </Button>
-                        {project.isPublished && project.liveUrl && (
-                            <Button
-                                size="icon"
-                                className="bg-gradient-to-r from-quaternary-accent to-purple-accent hover:opacity-90 text-white shadow-lg shadow-quaternary-accent/20"
-                                asChild
-                            >
-                                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                                    <ExternalLink className="w-4 h-4" />
-                                </a>
-                            </Button>
-                        )}
-                    </CardFooter>
-                </Link>
-            </Card>
+                </Card>
+            </Link>
         </motion.div>
     );
 };

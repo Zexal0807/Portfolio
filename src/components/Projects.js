@@ -15,7 +15,6 @@ const tags = [
     TAGS.NODEJS
 ]
 
-
 const Projects = () => {
     const [selectedTags, setSelectedTags] = useState([]);
 
@@ -134,15 +133,19 @@ const Projects = () => {
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
                     {filteredProjects.map((project) => (
-                        <motion.div key={project.slug} variants={{
-                            hidden: { opacity: 0, y: 30 },
-                            visible: {
-                                opacity: 1,
-                                y: 0,
-                                transition: { duration: 0.5 },
-                            },
-                        }}>
-                            <ProjectCard project={project} />
+                        <motion.div
+                            key={project.slug}
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 0.5 },
+                                },
+                            }}>
+                            <ProjectCard
+                                project={project}
+                            />
                         </motion.div>
                     ))}
                 </motion.div>
