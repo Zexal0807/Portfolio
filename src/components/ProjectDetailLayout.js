@@ -1,12 +1,38 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Calendar, ExternalLink, Github } from "lucide-react"
+import { ArrowLeft, Calendar, ChevronLeft, ChevronRight, ExternalLink, Github, X } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
 
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+
+import { useState } from "react"
+
 export default function ProgettiDetailLayout({ dati }) {
+
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const nextImage = () => {
+        setCurrentImageIndex((prev) => (prev + 1) % dati.images.length);
+    };
+
+    const prevImage = () => {
+        setCurrentImageIndex((prev) => (prev - 1 + dati.images.length) % dati.images.length);
+    };
+
+
     return (
         <div>
             <motion.div
@@ -89,7 +115,7 @@ export default function ProgettiDetailLayout({ dati }) {
             </section>
 
             {/* Gallery Section */}
-            {/* <section className="py-16 bg-section-about">
+            <section className="py-16 bg-section-about">
                 <div className="container px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -101,6 +127,44 @@ export default function ProgettiDetailLayout({ dati }) {
                             Galleria Immagini
                         </h2>
 
+                        <div className="w-full flex justify-center items-center">
+                            <Carousel
+                                opts={{
+                                    align: "start",
+                                }}
+                                plugins={[
+                                    Autoplay({
+                                        delay: 3000,
+                                    }),
+                                ]}
+                                className="w-75/100"
+                            >
+                                <CarouselContent>
+                                    {dati.images.map((image, index) => (
+                                        <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
+                                            <motion.div
+                                                whileHover={{ scale: 1.02 }}
+                                                className="overflow-hidden rounded-xl border border-border/50 bg-card cursor-pointer"
+                                                onClick={() => {
+                                                    setCurrentImageIndex(index);
+                                                    setLightboxOpen(true);
+                                                }}
+                                            >
+                                                <img
+                                                    src={image}
+                                                    alt={`${dati.title} - Immagine ${index + 1}`}
+                                                    className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
+                                                />
+                                            </motion.div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                                <CarouselPrevious />
+                                <CarouselNext />
+                            </Carousel>
+                        </div>
+
+                        {/* 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
                             {dati.images.map((img, idx) => (
                                 <motion.div
@@ -135,10 +199,10 @@ export default function ProgettiDetailLayout({ dati }) {
                                     </a>
                                 </Button>
                             </div>
-                        )}
+                        )} */}
                     </motion.div>
                 </div>
-            </section> */}
+            </section>
 
             {/* Description Section */}
             {/* <section className="py-16 bg-section-datis">
@@ -286,13 +350,14 @@ export default function ProgettiDetailLayout({ dati }) {
             </section> */}
 
             {/* Lightbox */}
-            {/* <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-                <DialogContent className="max-w-5xl bg-background/95 backdrop-blur-xl border-border p-0">
+            <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+                <DialogTitle />
+                <DialogContent className="bg-background/95 backdrop-blur-xl border-border p-0">
                     <div className="relative">
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="absolute top-4 right-4 z-10 bg-background/50 hover:bg-background/80"
+                            className="absolute top-4 right-4 z-10 bg-background/50 hover:bg-background/80 cursor-pointer"
                             onClick={() => setLightboxOpen(false)}
                         >
                             <X className="w-5 h-5" />
@@ -309,7 +374,7 @@ export default function ProgettiDetailLayout({ dati }) {
                                 <Button
                                     variant="ghost"
                                     size="icon"
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/80"
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/80 cursor-pointer"
                                     onClick={prevImage}
                                 >
                                     <ChevronLeft className="w-6 h-6" />
@@ -317,7 +382,7 @@ export default function ProgettiDetailLayout({ dati }) {
                                 <Button
                                     variant="ghost"
                                     size="icon"
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/80"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/50 hover:bg-background/80 cursor-pointer"
                                     onClick={nextImage}
                                 >
                                     <ChevronRight className="w-6 h-6" />
@@ -327,7 +392,7 @@ export default function ProgettiDetailLayout({ dati }) {
                                     {dati.images.map((_, idx) => (
                                         <button
                                             key={idx}
-                                            className={`w-2 h-2 rounded-full transition-colors ${idx === currentImageIndex ? "bg-primary-accent" : "bg-foreground/30"
+                                            className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${idx === currentImageIndex ? "bg-primary-accent" : "bg-foreground/30"
                                                 }`}
                                             onClick={() => setCurrentImageIndex(idx)}
                                         />
@@ -337,7 +402,7 @@ export default function ProgettiDetailLayout({ dati }) {
                         )}
                     </div>
                 </DialogContent>
-            </Dialog> */}
+            </Dialog>
         </div>
     )
 }

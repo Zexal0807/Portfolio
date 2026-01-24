@@ -6,18 +6,25 @@ export const projects = [
         title: "Sito Biroli X Costruire",
         period: "2025-12",
         periodDisplay: "Dicembre 2025",
+        previewImage: "https://imagefaker.access.mx.com//250x100/",
         tags: [
             TAGS.WORDPRESS
         ],
         isPublished: true,
         liveUrl: "https://birolixcostruire.it",
         description: "Un semplice sito vetrina relizzato con WordPress, dove poter facilmente caricare i propri lavori svolti sotto forma di articoli.",
-
+        images: [
+            "https://imagefaker.access.mx.com//250x100/",
+            "https://imagefaker.access.mx.com//250x100/",
+            "https://imagefaker.access.mx.com//250x100/",
+            "https://imagefaker.access.mx.com//250x100/",
+            "https://imagefaker.access.mx.com//250x100/",
+            "https://imagefaker.access.mx.com//250x100/",
+        ],
 
         fullDescription: "Sviluppo completo di un'applicazione mobile e-commerce cross-platform utilizzando React Native. L'app offre un'esperienza utente fluida con gestione completa del catalogo prodotti, carrello intelligente, sistema di pagamenti sicuro tramite Stripe, e notifiche push per aggiornamenti ordini. L'architettura backend è costruita su Node.js con MongoDB per garantire scalabilità e performance ottimali.",
 
         githubUrl: "https://github.com/username/ecommerce-app",
-        images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
         features: [
             "Catalogo prodotti con ricerca avanzata e filtri",
             "Carrello intelligente con persistenza locale",
