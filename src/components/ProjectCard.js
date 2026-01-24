@@ -1,11 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowRight, Image as ImageIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const tagColors = {
     JavaScript: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
@@ -61,7 +60,6 @@ const ProjectCard = ({ project }) => {
                     <CardContent className="p-5 flex-grow">
                         <h3
                             className="text-xl font-semibold text-foreground mb-2 group-hover:text-quaternary-accent transition-colors cursor-pointer"
-                        // onClick={() => navigate(`/progetto/${project.id}`)}
                         >
                             {project.title}
                         </h3>
@@ -75,7 +73,7 @@ const ProjectCard = ({ project }) => {
                                 <Badge
                                     key={tag.name}
                                     variant="outline"
-                                    className={`text-xs ${tag.tagClasses || "bg-muted text-muted-foreground"}`}
+                                    className={cn('text-xs', tag.tagClasses || "bg-muted text-muted-foreground")}
                                 >
                                     {tag.name}
                                 </Badge>

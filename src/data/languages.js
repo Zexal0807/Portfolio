@@ -12,7 +12,8 @@ import {
     SiPhp,
     SiNeo4J,
     SiSqlite,
-    SiMysql
+    SiMysql,
+    SiWordpress
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { Database } from "lucide-react";
@@ -33,7 +34,8 @@ const DATA = {
     PHP: { name: "PHP", icon: SiPhp, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)", tagClasses: "" },
     GIT: { name: "Git", icon: SiGit, color: "#F05032", bgColor: "rgba(240, 80, 50, 0.1)", tagClasses: "" },
     DOCKER: { name: "Docker", icon: SiDocker, color: "#2496ED", bgColor: "rgba(36, 150, 237, 0.1)", tagClasses: "" },
-    TAILWINDCSS: { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)", tagClasses: "" },
+    TAILWINDCSS: { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)", tagClasses: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
+    WORDPRESS: { name: "WordPress", icon: SiWordpress, color: "#06B6D4", bgColor: "rgba(6, 182, 212, 0.1)", tagClasses: "bg-blue-500/20 text-blue-400 border-blue-500/30" }
 }
 
 

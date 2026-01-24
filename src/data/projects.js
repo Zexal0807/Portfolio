@@ -3,16 +3,19 @@ import { TAGS } from "./languages";
 export const projects = [
     {
         slug: "birolixcostruire",
-        title: "BiroliXCostruire",
-        description: "Applicazione mobile cross-platform per un e-commerce con gestione carrello, pagamenti e notifiche push. UI moderna e performante.",
-        fullDescription: "Sviluppo completo di un'applicazione mobile e-commerce cross-platform utilizzando React Native. L'app offre un'esperienza utente fluida con gestione completa del catalogo prodotti, carrello intelligente, sistema di pagamenti sicuro tramite Stripe, e notifiche push per aggiornamenti ordini. L'architettura backend è costruita su Node.js con MongoDB per garantire scalabilità e performance ottimali.",
-        period: "2024-01",
-        periodDisplay: "Gennaio 2024",
+        title: "Sito Biroli X Costruire",
+        period: "2025-12",
+        periodDisplay: "Dicembre 2025",
         tags: [
-            TAGS.JAVASCRIPT
+            TAGS.WORDPRESS
         ],
         isPublished: true,
-        liveUrl: "https://example.com/app",
+        liveUrl: "https://birolixcostruire.it",
+        description: "Un semplice sito vetrina relizzato con WordPress, dove poter facilmente caricare i propri lavori svolti sotto forma di articoli.",
+
+
+        fullDescription: "Sviluppo completo di un'applicazione mobile e-commerce cross-platform utilizzando React Native. L'app offre un'esperienza utente fluida con gestione completa del catalogo prodotti, carrello intelligente, sistema di pagamenti sicuro tramite Stripe, e notifiche push per aggiornamenti ordini. L'architettura backend è costruita su Node.js con MongoDB per garantire scalabilità e performance ottimali.",
+
         githubUrl: "https://github.com/username/ecommerce-app",
         images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
         features: [

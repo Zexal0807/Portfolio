@@ -1,25 +1,26 @@
 
+import { projects } from '@/data/projects'
 
-// export async function generateStaticParams() {
-//     const progetti = await getTuttiProgetti(); // da JSON/DB
-//     return progetti.map(p => ({
-//         slug: p.slug // genera /progetti/birolixcostruire, etc.
-//     }));
-// }
+export async function generateStaticParams() {
+    // const progetti = await getTuttiProgetti(); // da JSON/DB
+    const progetti = projects
+    return progetti.map(p => ({
+        slug: p.slug
+    }));
+}
 
+import ProgettiDetailLayout from "@/components/ProjectDetailLayout";
 import { getProgetto } from "@/data/projects";
 
 export default async function ProgettoPage({ params }) {
     const { slug } = await params;
-    console.log(slug)
+
     const dati = await getProgetto(slug);
 
     if (!dati)
         notFound();
 
-    // Usare custom tag (<DynamicLayout dati={dati} />;)
     return (
-        <>
-        </>
+        <ProgettiDetailLayout dati={dati} />
     )
 }
