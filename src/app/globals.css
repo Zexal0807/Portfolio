@@ -51,6 +51,12 @@
     --color-input: var(--input);
     --color-ring: var(--ring);
 
+    --color-section-hero: var(--section-hero);
+    --color-section-about: var(--section-about);
+    --color-section-projects: var(--section-projects);
+    --color-section-services: var(--section-sevices);
+    --color-section-contact: var(--section-contact);
+
     --color-sidebar: var(--sidebar-background);
     --color-sidebar-foreground: var(--sidebar-foreground);
     --color-sidebar-primary: var(--sidebar-primary);
