@@ -163,49 +163,12 @@ export default function ProgettiDetailLayout({ dati }) {
                                 <CarouselNext />
                             </Carousel>
                         </div>
-
-                        {/* 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-                            {dati.images.map((img, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    whileHover={{ scale: 1.02 }}
-                                    className="cursor-pointer overflow-hidden rounded-xl border border-border/50 bg-card"
-                                    onClick={() => {
-                                        setCurrentImageIndex(idx);
-                                        setLightboxOpen(true);
-                                    }}
-                                >
-                                    <img
-                                        src={img}
-                                        alt={`${dati.title} - Immagine ${idx + 1}`}
-                                        className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
-                                    />
-                                </motion.div>
-                            ))}
-                        </div>
-
-                        {dati.videoUrl && (
-                            <div className="mt-8 text-center">
-                                <Button
-                                    size="lg"
-                                    variant="outline"
-                                    className="border-quaternary-accent/50 hover:bg-quaternary-accent/10"
-                                    asChild
-                                >
-                                    <a href={dati.videoUrl} target="_blank" rel="noopener noreferrer">
-                                        <Play className="w-5 h-5 mr-2" />
-                                        Guarda il Video Demo
-                                    </a>
-                                </Button>
-                            </div>
-                        )} */}
                     </motion.div>
                 </div>
             </section>
 
             {/* Description Section */}
-            {/* <section className="py-16 bg-section-datis">
+            <section className="py-16 bg-section-datis">
                 <div className="container px-4">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
@@ -223,7 +186,7 @@ export default function ProgettiDetailLayout({ dati }) {
                         </motion.div>
                     </div>
                 </div>
-            </section> */}
+            </section>
 
             {/* Features Section */}
             {/* {dati.features && dati.features.length > 0 && (
@@ -314,7 +277,7 @@ export default function ProgettiDetailLayout({ dati }) {
             </section> */}
 
             {/* CTA Section */}
-            {/* <section className="py-16 bg-section-hero">
+            <section className="py-16 bg-section-hero">
                 <div className="container px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -330,24 +293,26 @@ export default function ProgettiDetailLayout({ dati }) {
                             Contattami per discutere del tuo prossimo progetto o per saperne di più su questo lavoro.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button
-                                size="lg"
-                                className="bg-gradient-to-r from-primary-accent to-secondary-accent text-white"
-                                onClick={() => navigate("/#contatti")}
-                            >
-                                Contattami
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                onClick={() => navigate("/#progetti")}
-                            >
-                                Vedi altri progetti
-                            </Button>
+                            <Link href="/#contatti">
+                                <Button
+                                    className="bg-gradient-to-r from-primary-accent to-secondary-accent text-white"
+                                    size="lg"
+                                >
+                                    Contattami
+                                </Button>
+                            </Link>
+                            <Link href="/#progetti">
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                >
+                                    Vedi altri progetti
+                                </Button>
+                            </Link>
                         </div>
                     </motion.div>
                 </div>
-            </section> */}
+            </section>
 
             {/* Lightbox */}
             <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
