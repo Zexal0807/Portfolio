@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Calendar, ChevronLeft, ChevronRight, ExternalLink, Github, X } from "lucide-react"
+import { ArrowLeft, Calendar, CheckCircle2, ChevronLeft, ChevronRight, ExternalLink, Github, Lightbulb, Trophy, X } from "lucide-react"
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { Badge } from "./ui/badge"
@@ -18,6 +18,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 import { useState } from "react"
+import { Card, CardContent } from "./ui/card"
 
 export default function ProgettiDetailLayout({ dati }) {
 
@@ -189,7 +190,7 @@ export default function ProgettiDetailLayout({ dati }) {
             </section>
 
             {/* Features Section */}
-            {/* {dati.features && dati.features.length > 0 && (
+            {dati.features && dati.features.length > 0 && (
                 <section className="py-16 bg-section-services">
                     <div className="container px-4">
                         <div className="max-w-4xl mx-auto">
@@ -213,7 +214,7 @@ export default function ProgettiDetailLayout({ dati }) {
                                             transition={{ delay: idx * 0.1 }}
                                         >
                                             <Card className="bg-card/50 border-border/50 hover:border-tertiary-accent/50 transition-colors">
-                                                <CardContent className="p-4 flex items-start gap-3">
+                                                <CardContent className="flex items-start gap-3">
                                                     <div className="w-2 h-2 rounded-full bg-tertiary-accent mt-2 flex-shrink-0" />
                                                     <span className="text-foreground">{feature}</span>
                                                 </CardContent>
@@ -225,10 +226,10 @@ export default function ProgettiDetailLayout({ dati }) {
                         </div>
                     </div>
                 </section>
-            )} */}
+            )}
 
             {/* Challenges & Outcome */}
-            {/* <section className="py-16 bg-section-contact">
+            <section className="py-16 bg-section-contact">
                 <div className="container px-4">
                     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
                         {dati.challenges && (
@@ -274,10 +275,10 @@ export default function ProgettiDetailLayout({ dati }) {
                         )}
                     </div>
                 </div>
-            </section> */}
+            </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-section-hero">
+            <section className="py-16 bg-section-projects">
                 <div className="container px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -317,7 +318,7 @@ export default function ProgettiDetailLayout({ dati }) {
             {/* Lightbox */}
             <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
                 <DialogTitle />
-                <DialogContent className="bg-background/95 backdrop-blur-xl border-border p-0">
+                <DialogContent className="bg-background/95 backdrop-blur-xl border-border p-0 md:max-w-5xl">
                     <div className="relative">
                         <Button
                             variant="ghost"

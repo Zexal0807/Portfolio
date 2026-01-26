@@ -12,7 +12,9 @@ import { TAGS } from "@/data/languages";
 
 const tags = [
     TAGS.NEXTJS,
-    TAGS.NODEJS
+    TAGS.JSON,
+    TAGS.NODEJS,
+    TAGS.WORDPRESS
 ]
 
 const Projects = () => {

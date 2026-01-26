@@ -1,48 +1,71 @@
 import { TAGS } from "./languages";
 
 export const projects = [
+    // Febbraio 2026 Prontoemergenza?
     {
         slug: "birolixcostruire",
         title: "Sito Biroli X Costruire",
         period: "2025-12",
         periodDisplay: "Dicembre 2025",
-        previewImage: "https://imagefaker.access.mx.com//250x100/",
+        previewImage: "/birolixcostruire/1.png",
         tags: [
             TAGS.WORDPRESS
         ],
         isPublished: true,
         liveUrl: "https://birolixcostruire.it",
-        description: "Un semplice sito vetrina relizzato con WordPress, dove poter facilmente caricare i propri lavori svolti sotto forma di articoli.",
+        description: "Sito vetrina realizzato con WordPress per l'impresa edile Biroli X Costruire. Il progetto è stato pensato per offrire un sistema semplice e immediato, che consente al proprietario di pubblicare autonomamente i propri lavori come articoli.",
         images: [
-            "https://imagefaker.access.mx.com//250x100/",
-            "https://imagefaker.access.mx.com//250x100/",
-            "https://imagefaker.access.mx.com//250x100/",
-            "https://imagefaker.access.mx.com//250x100/",
-            "https://imagefaker.access.mx.com//250x100/",
-            "https://imagefaker.access.mx.com//250x100/",
+            "/birolixcostruire/1.png",
+            "/birolixcostruire/2.png",
+            "/birolixcostruire/3.png"
         ],
-        fullDescription: "Sviluppo completo di un'applicazione mobile e-commerce cross-platform utilizzando React Native. L'app offre un'esperienza utente fluida con gestione completa del catalogo prodotti, carrello intelligente, sistema di pagamenti sicuro tramite Stripe, e notifiche push per aggiornamenti ordini. L'architettura backend è costruita su Node.js con MongoDB per garantire scalabilità e performance ottimali.",
+        fullDescription: "Lo sviluppo del sito è stato interamente realizzato con WordPress, utilizzando un tema personalizzato per rispecchiare l'identità visiva dell'azienda. L'obiettivo principale era creare una piattaforma semplice, pulita e facilmente aggiornabile, nella quale il cliente potesse aggiungere nuovi lavori senza competenze tecniche. Ogni progetto è presentato come un articolo con galleria fotografica, descrizione e tag dedicati ai diversi tipi di intervento.",
         githubUrl: null,
         features: [
-            "Catalogo prodotti con ricerca avanzata e filtri",
-            "Carrello intelligente con persistenza locale",
-            "Sistema di pagamenti sicuro con Stripe",
-            "Notifiche push per aggiornamenti ordini",
-            "Sistema di recensioni e valutazioni",
-            "Gestione wishlist e prodotti preferiti"
+            "Gestione dei lavori tramite articoli WordPress",
+            "Interfaccia di amministrazione semplificata",
+            "Gallerie fotografiche per ogni progetto",
+            "Ottimizzazione SEO di base e caricamento veloce"
         ],
-        challenges: "La sfida principale è stata ottimizzare le performance dell'app mantenendo un'esperienza utente fluida anche con cataloghi di migliaia di prodotti. Abbiamo implementato lazy loading, caching intelligente e virtualizzazione delle liste.",
-        outcome: "L'app ha raggiunto oltre 10.000 download nel primo mese con un rating medio di 4.8 stelle. Il tasso di conversione è aumentato del 35% rispetto alla versione web mobile."
-    }
-
+        challenges: "La sfida principale è stata creare un sistema che permettesse al cliente di aggiornare i contenuti in autonomia, mantenendo al contempo coerenza grafica e facilità d'uso. Sono stati implementati campi personalizzati e modelli semplici per garantire un processo di pubblicazione immediato.",
+        outcome: "Il risultato è un sito professionale, leggero e facilmente gestibile, che permette al proprietario di mostrare il proprio lavoro in modo ordinato e costante, senza dover ricorrere a supporto tecnico esterno."
+    },
     // Dashboard carnovali settembre 2025
     // DailyCHeckCountdown Gennaio 2026
-    // Sito Roujutsu  Dicembre 2025
+    {
+        slug: "roujutsu",
+        title: "Sito Roujutsu",
+        period: "2024-12",
+        periodDisplay: "Dicembre 2024",
+        previewImage: "/roujutsu/1.png",
+        tags: [
+            TAGS.NEXTJS,
+            TAGS.JSON,
+            TAGS.NODEJS,
+            TAGS.TAILWINDCSS
+        ],
+        isPublished: true,
+        liveUrl: "https://www.roujutsu.it",
+        description: "Sito web realizzato con Next.js (App Router) per l'arte marziale completa Roujutsu",
+        images: [
+            "/roujutsu/1.png",
+            "/roujutsu/2.png",
+        ],
+        fullDescription: "Realizzazione di un sito web animato con Next.js (App Router) per l'arte marziale completa Roujutsu, valorizando al massimo le varie sezioni e la storia, mantenendo tutta la galleria storica",
+        githubUrl: null,
+        features: [
+            "Sito completamente animato",
+            "Hero section con statistiche chiave per impatto immediato",
+            "Timeline interattiva della storia",
+            "Galleria eventi"
+        ],
+        challenges: "Creare un sito informativo sull'arte marziale completa Roujutsu, migliorane l'aspetto rispetto a delle precedenti versioni, introdurre uno stile moderno e animato",
+        outcome: "Sito moderno e di effetto,  per attirare iscritti tramite CTA"
+    }
     // Dashboard MYASD Gennario 2025
     // App. web università febbraio 2025
     // App presenze palestra ottobre 2024
-
-
+    // QRCODE generator maggio 2022
 ];
 
 export async function getProgetto(slug) {

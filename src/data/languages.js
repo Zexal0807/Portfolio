@@ -13,7 +13,8 @@ import {
     SiNeo4J,
     SiSqlite,
     SiMysql,
-    SiWordpress
+    SiWordpress,
+    SiJson
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 import { Database } from "lucide-react";
@@ -21,6 +22,7 @@ import { Database } from "lucide-react";
 const DATA = {
     NEXTJS: { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF", bgColor: "rgba(255, 255, 255, 0.1)", tagClasses: "" },
     JAVASCRIPT: { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E", bgColor: "rgba(247, 223, 30, 0.1)", tagClasses: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
+    JSON: { name: "JSON", icon: SiJson, color: "#F7DF1E", bgColor: "rgba(247, 223, 30, 0.1)", tagClasses: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30" },
     REACT: { name: "React", icon: SiReact, color: "#61DAFB", bgColor: "rgba(97, 218, 251, 0.1)", tagClasses: "bg-cyan-500/20 text-cyan-400 border-cyan-500/30" },
     REACT_NATIVE: { name: "React Native", icon: TbBrandReactNative, color: "#61DAFB", bgColor: "rgba(97, 218, 251, 0.1)", tagClasses: "bg-purple-500/20 text-purple-400 border-purple-500/30" },
     TYPESCRIPT: { name: "TypeScript", icon: SiTypescript, color: "#3178C6", bgColor: "rgba(49, 120, 198, 0.1)", tagClasses: "bg-blue-500/20 text-blue-400 border-blue-500/30" },
@@ -61,7 +63,7 @@ Object.entries(skills).forEach(([k, v]) => {
 export const SKILLS = skills;
 
 let tags = { ...DATA };
-Object.entries(skills).forEach(([k, v]) => {
+Object.entries(tags).forEach(([k, v]) => {
     tags[k] = {
         name: v.name,
         tagClasses: v.tagClasses
