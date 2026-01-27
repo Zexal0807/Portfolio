@@ -61,9 +61,42 @@ export const projects = [
         ],
         challenges: "Creare un sito informativo sull'arte marziale completa Roujutsu, migliorane l'aspetto rispetto a delle precedenti versioni, introdurre uno stile moderno e animato",
         outcome: "Sito moderno e di effetto,  per attirare iscritti tramite CTA"
-    }
+    },
     // Dashboard MYASD Gennario 2025
-    // App. web università febbraio 2025
+    {
+        slug: "centro-mistra",
+        title: "Sito web dinamico con Quiz per Centro MISTRA",
+        period: "2025-02",
+        periodDisplay: "Febbraio 2025",
+        previewImage: "/centro-mistra/1.png",
+        tags: [
+            TAGS.JAVASCRIPT,
+            TAGS.REACT,
+            TAGS.REST_API
+        ],
+        isPublished: false,
+        liveUrl: null,
+        description: "Sito web dinamico realizzato con React.js e backend Strapi headless CMS con sezione quiz dinamica.",
+        images: [
+            "/centro-mistra/1.png",
+            "/centro-mistra/2.png",
+            "/centro-mistra/3.png",
+            "/centro-mistra/4.png"
+        ],
+        fullDescription: "Sviluppo di sistema completo di frontend React.js e backend Strape headless, confiurato per per l'aggiunta, modifica e rimozioni di pagine,  oltre che l'aggiunta e gestione di quiz tramite pannello admin.",
+        githubUrl: "https://github.com/Zexal0807/webAppProject",
+        features: [
+            "Gestione contenuti semplificata con Strapi per aggiungere/modificare pagine senza codice",
+            "Sezione quiz dinamica con dati fetchati dal backend Strapi",
+            "Architettura headless CMS per flessibilità frontend React",
+            "Interfaccia admin intuitiva per aggiornamenti rapidi",
+            "Accesso multiutenti con diversi ruoli"
+        ],
+        challenges: "Configurare Strapi per rendere l'aggiunta e modifica di pagine ultra-semplice, integrando dati dinamici nella sezione quiz React mantenendo performance ottimali.",
+        outcome: "Piattaforma scalabile e user-friendly, ideale per contenuti dinamici con manutenzione minima grazie al CMS headless."
+    }
+
+
     // App presenze palestra ottobre 2024
     // QRCODE generator maggio 2022
 ];
