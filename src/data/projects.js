@@ -2,6 +2,7 @@ import { TAGS } from "./languages";
 
 export const projects = [
     // Febbraio 2026 Prontoemergenza?
+    // gennaio 2026 FinanceDashoard
     {
         slug: "birolixcostruire",
         title: "Sito Biroli X Costruire",
@@ -95,8 +96,6 @@ export const projects = [
         challenges: "Configurare Strapi per rendere l'aggiunta e modifica di pagine ultra-semplice, integrando dati dinamici nella sezione quiz React mantenendo performance ottimali.",
         outcome: "Piattaforma scalabile e user-friendly, ideale per contenuti dinamici con manutenzione minima grazie al CMS headless."
     }
-
-
     // App presenze palestra ottobre 2024
     // QRCODE generator maggio 2022
 ];

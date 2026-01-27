@@ -18,11 +18,11 @@ export const metadata = {
     //         'jujutsu prevalle',
     //         'karate prevalle',
     //     ],
-    //     icons: {
-    //         icon: '/favicon.ico',
-    //         shortcut: '/favicon.ico',
-    //         apple: '/apple-touch-icon.png',
-    //     },
+    icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon.ico',
+        apple: '/favicon.ico',
+    },
     //     manifest: '/site.webmanifest',
     robots: {
         index: true,
@@ -46,21 +46,20 @@ export const metadata = {
         type: 'website',
         locale: 'it_IT',
         siteName: 'Gallina Roberto | Portfolio',
-        //         images: [
-        //             {
-        //                 url: './logo.png',
-        //                 width: 1200,
-        //                 height: 630,
-        //                 alt: 'Roujutsu Prevalle logo',
-        //             },
-        //         ],
-        //     },
-        //     twitter: {
-        //         card: 'summary_large_image',
-        //         title: 'Roujutsu Prevalle | Arti Marziali',
-        //         description: 'Arte marziale completa a Prevalle (BS). Corsi per tutte le età.',
-        //         images: ['./logo.png'],
-        //     },
+        images: [
+            {
+                url: '/favicon.ico',
+                width: 1200,
+                height: 630,
+                alt: 'Roberto Gallina | Portfolio',
+            },
+        ],
+        twitter: {
+            card: 'summary_large_image',
+            title: 'Roberto Gallina | Portfolio',
+            description: 'Arte marziale completa a Prevalle (BS). Corsi per tutte le età.',
+            images: ['/favicon.ico'],
+        },
         //     other: {
         //         schemaLocalBusiness: JSON.stringify({
         //             '@context': 'https://schema.org',
