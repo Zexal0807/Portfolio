@@ -97,7 +97,6 @@ export const projects = [
         outcome: "Piattaforma scalabile e user-friendly, ideale per contenuti dinamici con manutenzione minima grazie al CMS headless."
     },
     // App presenze palestra ottobre 2024
-    // QRCODE generator maggio 2022
     {
         slug: "qrcode-generator",
         title: "QRCode Generator da zero",
@@ -116,11 +115,10 @@ export const projects = [
         fullDescription: "Creazione di un generatore di QRCode partendo da un paper guida, implementando da zero tutte le funzioni e calcoli necessari, il riusltato un generatore funzionante in grado di gestire diverse tipologie di dato, diversi livelli di error correction e quindi anche la possibilità di avere un logo al centro",
         githubUrl: "https://github.com/Zexal0807/QRCodeGenerator",
         features: [
-            "Gestione contenuti semplificata con Strapi per aggiungere/modificare pagine senza codice",
-            "Sezione quiz dinamica con dati fetchati dal backend Strapi",
-            "Architettura headless CMS per flessibilità frontend React",
-            "Interfaccia admin intuitiva per aggiornamenti rapidi",
-            "Accesso multiutenti con diversi ruoli"
+            "Generazione QRCode",
+            "Diversi livelli di error correction",
+            "Possibilità di aggiunta logo",
+            "Codifica di diversi dati"
         ],
         challenges: "Capire i sistemi matematici e di correzione d'errore presenti dentro lo standard dei QRCode",
         outcome: "Un generatoreidi QRCode funzionante capace di memorizzate diverse tipologie di dati (Numeri telefono, url, stringhe ed eventi)"
