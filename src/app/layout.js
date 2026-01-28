@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/sonner"
 
 import "./globals.css";
 
@@ -112,10 +113,10 @@ export default function RootLayout({ children }) {
         <html lang="it">
             <body className="min-h-screen bg-background">
                 <Navbar />
+                <Toaster />
                 <main>
                     {children}
                 </main>
-                {/* <Footer /> */}
             </body>
         </html>
     );

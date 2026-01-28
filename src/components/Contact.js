@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Github, Linkedin, MapPin, MessageCircle } from "lucide-react";
+import { Send, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
-// import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner"
 
 const Contact = () => {
     // const { toast } = useToast();
@@ -23,16 +23,36 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simula invio form
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        try {
+            const formDataToSend = new FormData();
+            formDataToSend.append('name', formData.name);
+            formDataToSend.append('email', formData.email);
+            formDataToSend.append('message', formData.message);
 
-        // toast({
-        //     title: "Messaggio inviato! ✨",
-        //     description: "Ti risponderò il prima possibile. Grazie per avermi contattato!",
-        // });
+            const response = await fetch('https://formspree.io/f/mkorlkdk', {
+                method: 'POST',
+                body: formDataToSend,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
 
-        setFormData({ name: "", email: "", message: "" });
-        setIsSubmitting(false);
+            if (response.ok) {
+                toast.success("Messaggio inviato! ✨", {
+                    description: "Ti risponderò il prima possibile. Grazie per avermi contattato!",
+                    position: "bottom-right"
+                });
+                setFormData({ name: "", email: "", message: "" });
+            } else {
+                throw new Error('Errore invio');
+            }
+        } catch (err) {
+            // DOPO errore: tua logica
+            alert(err)
+            console.error(err);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e) => {
@@ -41,12 +61,6 @@ const Contact = () => {
             [e.target.name]: e.target.value,
         }));
     };
-
-    const socialLinks = [
-        { icon: Github, href: "https://github.com", label: "GitHub", color: "hover:text-foreground" },
-        { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-primary-accent" },
-        { icon: Mail, href: "mailto:email@example.com", label: "Email", color: "hover:text-secondary-accent" },
-    ];
 
     return (
         <section id="contatti" className="py-24 bg-section-contact relative overflow-hidden">
@@ -98,7 +112,9 @@ const Contact = () => {
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-4 p-3 bg-white/10 rounded-xl backdrop-blur-sm">
                                         <Mail className="w-5 h-5" />
-                                        <span className="text-sm">gallinar00@gmail.com</span>
+                                        <a className="text-sm" href="mailto:gallinar00@gmail.com">
+                                            gallinar00@gmail.com
+                                        </a>
                                     </div>
                                 </div>
                             </CardContent>
