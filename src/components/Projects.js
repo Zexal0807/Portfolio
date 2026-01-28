@@ -12,7 +12,8 @@ import { TAGS } from "@/data/languages";
 
 const tags = [
     TAGS.NEXTJS,
-    TAGS.JSON,
+    TAGS.REACT,
+    TAGS.REACT_NATIVE,
     TAGS.NODEJS,
     TAGS.WORDPRESS
 ]
@@ -36,7 +37,11 @@ const Projects = () => {
         if (selectedTags.length === 0)
             setFilteredProjects(projects)
         else
-            setFilteredProjects(projects.filter((project) => selectedTags.some((tag) => project.tags.includes(tag))))
+            setFilteredProjects(projects
+                .filter((project) => selectedTags
+                    .some((tag) => project.tags.map(x => x.name).includes(tag.name))
+                )
+            )
     }, [projects, selectedTags]);
 
     return (
@@ -116,8 +121,6 @@ const Projects = () => {
                     )}
                 </motion.div>
 
-                <p>{selectedTags.join(" - ")}</p>
-
                 {/* Projects Grid */}
                 <motion.div
                     variants={{
@@ -134,38 +137,31 @@ const Projects = () => {
                     viewport={{ once: true, margin: "-50px" }}
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                 >
-                    {filteredProjects.map((project) => (
-                        <motion.div
-                            key={project.slug}
-                            variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: {
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: { duration: 0.5 },
-                                },
-                            }}>
-                            <ProjectCard
-                                project={project}
-                            />
-                        </motion.div>
-                    ))}
-                </motion.div>
+                    {/* {filteredProjects.map(x => x.slug).join(" - ")} */}
 
-                {/* {filteredProjects.length === 0 && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="text-center py-16"
-                    >
-                        <p className="text-muted-foreground mb-4">
-                            Nessun progetto trovato con i filtri selezionati.
-                        </p>
-                        <Button variant="link" onClick={clearFilters} className="text-quaternary-accent">
-                            Rimuovi filtri
-                        </Button>
-                    </motion.div>
-                )} */}
+                    {projects.map((project) => {
+                        const isVisible = filteredProjects.includes(project);
+
+                        return (
+                            <motion.div
+                                key={project.slug}
+                                initial={false}
+                                animate={isVisible ? "visible" : "hidden"}
+                                variants={{
+                                    hidden: { opacity: 0, y: 30, display: "none" },
+                                    visible: {
+                                        opacity: 1,
+                                        y: 0,
+                                        display: "block",
+                                        transition: { duration: 0.3 },
+                                    },
+                                }}
+                            >
+                                <ProjectCard project={project} />
+                            </motion.div>
+                        );
+                    })}
+                </motion.div>
             </div>
         </section>
     );
