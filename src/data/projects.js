@@ -98,6 +98,33 @@ export const projects = [
     },
     // App presenze palestra ottobre 2024
     {
+        slug: "rilevatore-presenze",
+        title: "App per segnare le presenze tramite lettore NFC",
+        period: "2024-06",
+        periodDisplay: "Giugno 2024",
+        previewImage: "/rilevatore-presenze/1.png",
+        tags: [
+            TAGS.ANDROID,
+            TAGS.REST_API
+        ],
+        isPublished: true,
+        liveUrl: null,
+        description: "Creazione di un'app Android nativa che tramite un lettore NFC rilevasse le entrate e uscite, e comunicasse tutti i dati tramite chiamate API",
+        images: [
+            "/rilevatore-presenze/1.png",
+        ],
+        fullDescription: "Creazione di un'app Android nativa che tramite un lettore NFC rilevasse le entrate e uscite da una palestra, il sistema è progettato per garantire il funzionamento anche offline, e sincronizzarsi con il server una volta disponibile la connessione tramite chiamate API",
+        githubUrl: false,
+        features: [
+            "Applicazione Android nativa",
+            "Funzionameno offline e sicronizzazione",
+            "Uso di rilevatore NFC",
+            "Implemntazione di chiamate API"
+        ],
+        challenges: "Sviluppare l'applicazione in Android nativo tramite AndroidStudio e gestirne le funzionalità",
+        outcome: "Applicazione in uso da anni, sfruttata per rilevare l'ora d'entrata e uscita per rilvare le presenze"
+    },
+    {
         slug: "qrcode-generator",
         title: "QRCode Generator da zero",
         period: "2022-05",
