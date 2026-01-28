@@ -14,13 +14,13 @@ export const projects = [
         ],
         isPublished: true,
         liveUrl: "https://birolixcostruire.it",
-        description: "Sito vetrina realizzato con WordPress per l'impresa edile Biroli X Costruire. Il progetto è stato pensato per offrire un sistema semplice e immediato, che consente al proprietario di pubblicare autonomamente i propri lavori come articoli.",
+        description: "Sito vetrina realizzato con WordPress per l'impresa edile Biroli X Costruire. Il progetto è stato pensato per offrire un sistema semplice e immediato che consentisse al proprietario di pubblicare autonomamente i propri lavori",
         images: [
             "/birolixcostruire/1.png",
             "/birolixcostruire/2.png",
             "/birolixcostruire/3.png"
         ],
-        fullDescription: "Lo sviluppo del sito è stato interamente realizzato con WordPress, utilizzando un tema personalizzato per rispecchiare l'identità visiva dell'azienda. L'obiettivo principale era creare una piattaforma semplice, pulita e facilmente aggiornabile, nella quale il cliente potesse aggiungere nuovi lavori senza competenze tecniche. Ogni progetto è presentato come un articolo con galleria fotografica, descrizione e tag dedicati ai diversi tipi di intervento.",
+        fullDescription: "Il sito è stato sviluppato interamente realizzato con WordPress, utilizzando un tema personalizzato per rispecchiare l'identità visiva dell'azienda. L'obiettivo principale era creare una piattaforma semplice, pulita e facilmente aggiornabile, nella quale il cliente potesse aggiungere nuovi lavori senza avere competenze tecniche. Ogni progetto è presentato come un articolo con galleria fotografica, descrizione e tag dedicati ai diversi tipi di intervento.",
         githubUrl: null,
         features: [
             "Gestione dei lavori tramite articoli WordPress",
@@ -95,9 +95,36 @@ export const projects = [
         ],
         challenges: "Configurare Strapi per rendere l'aggiunta e modifica di pagine ultra-semplice, integrando dati dinamici nella sezione quiz React mantenendo performance ottimali.",
         outcome: "Piattaforma scalabile e user-friendly, ideale per contenuti dinamici con manutenzione minima grazie al CMS headless."
-    }
+    },
     // App presenze palestra ottobre 2024
     // QRCODE generator maggio 2022
+    {
+        slug: "qrcode-generator",
+        title: "QRCode Generator da zero",
+        period: "2022-05",
+        periodDisplay: "Maggio 2022",
+        previewImage: "/qrcode-generator/1.png",
+        tags: [
+            TAGS.PHP,
+        ],
+        isPublished: false,
+        liveUrl: null,
+        description: "Creazione di un generatore di QRCode da zero senza ausilio di librerie esterne",
+        images: [
+            "/qrcode-generator/1.png",
+        ],
+        fullDescription: "Creazione di un generatore di QRCode partendo da un paper guida, implementando da zero tutte le funzioni e calcoli necessari, il riusltato un generatore funzionante in grado di gestire diverse tipologie di dato, diversi livelli di error correction e quindi anche la possibilità di avere un logo al centro",
+        githubUrl: "https://github.com/Zexal0807/QRCodeGenerator",
+        features: [
+            "Gestione contenuti semplificata con Strapi per aggiungere/modificare pagine senza codice",
+            "Sezione quiz dinamica con dati fetchati dal backend Strapi",
+            "Architettura headless CMS per flessibilità frontend React",
+            "Interfaccia admin intuitiva per aggiornamenti rapidi",
+            "Accesso multiutenti con diversi ruoli"
+        ],
+        challenges: "Capire i sistemi matematici e di correzione d'errore presenti dentro lo standard dei QRCode",
+        outcome: "Un generatoreidi QRCode funzionante capace di memorizzate diverse tipologie di dati (Numeri telefono, url, stringhe ed eventi)"
+    }
 ];
 
 export async function getProgetto(slug) {

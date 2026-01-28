@@ -15,6 +15,7 @@ const tags = [
     TAGS.REACT,
     TAGS.REACT_NATIVE,
     TAGS.NODEJS,
+    TAGS.PHP,
     TAGS.WORDPRESS
 ]
 
