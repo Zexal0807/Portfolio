@@ -63,7 +63,38 @@ export const projects = [
         challenges: "Creare un sito informativo sull'arte marziale completa Roujutsu, migliorane l'aspetto rispetto a delle precedenti versioni, introdurre uno stile moderno e animato",
         outcome: "Sito moderno e di effetto,  per attirare iscritti tramite CTA"
     },
-    // Dashboard MYASD Gennario 2025
+    {
+        slug: "myasd",
+        title: "Dashboard MyAsd",
+        period: "2025-01",
+        periodDisplay: "Da Maggio 2023",
+        previewImage: "/myasd/1.png",
+        tags: [
+            TAGS.PHP,
+            TAGS.REST_API,
+            TAGS.MYSQL,
+            TAGS.ANDROID
+        ],
+        isPublished: true,
+        liveUrl: "https://myasd.roujutsu.it",
+        description: "Dashbord per gestire l'associtazione ASD Yoshitaka Arti Marziali Prevalle",
+        images: [
+            "/myasd/1.png",
+            "/myasd/2.png",
+            "/myasd/3.png",
+        ],
+        fullDescription: "Dashboard interna usadata dall'A.S.D. Yoshitaka Arti Marziali Prevalle, per gestire completamente i tesseramenti, i corsi, la contabilità, le presenze e gli esami di passaggio di grado; integra form esterni per il tesseramento e app per registrare le presenze",
+        githubUrl: null,
+        features: [
+            "Integrazione di form per gestire iscrizioni",
+            "Integrazione del server per gestire le presenze tramite app",
+            "App mobile per usare la dashboard",
+            "Gestione contabilittà",
+            "Continuo aggiornamento dal 2023"
+        ],
+        challenges: "Mantenere la separazione fisica dei dati su più database (per privacy) ma riuscendo ad integrarli a livello grafico",
+        outcome: "Dashboard interna completa di tutte le funzionalità necessaria all'asd"
+    },
     {
         slug: "centro-mistra",
         title: "Sito web dinamico con Quiz per Centro MISTRA",
