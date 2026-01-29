@@ -32,7 +32,36 @@ export const projects = [
         outcome: "Il risultato è un sito professionale, leggero e facilmente gestibile, che permette al proprietario di mostrare il proprio lavoro in modo ordinato e costante, senza dover ricorrere a supporto tecnico esterno."
     },
     // Dashboard carnovali settembre 2025
-    // DailyCHeckCountdown Gennaio 2026
+    {
+        slug: "dailycheckcountdown",
+        title: "Daily Check Countdown",
+        period: "2026-01",
+        periodDisplay: "Gennaio 2026",
+        previewImage: "/dailycheckcountdown/1.png",
+        tags: [
+            TAGS.REACT_NATIVE,
+            TAGS.ANDROID
+        ],
+        isPublished: true,
+        liveUrl: "https://play.google.com/store/apps/details?id=com.dailycheckcountdown",
+        description: "Mobile App per segnare i giorni che mancano a un evento",
+        images: [
+            "/dailycheckcountdown/1.png",
+            "/dailycheckcountdown/2.png",
+            "/dailycheckcountdown/3.png",
+            "/dailycheckcountdown/4.png",
+            "/dailycheckcountdown/5.png",
+        ],
+        fullDescription: "Una mobile app, nata dal semplice desiderio di contare i giorni che mancano alla fine delal scuola, che consenta di segnarli tramite un disegno tutti i giorni, e che mi ricordi di accedere tutti i giorni",
+        githubUrl: null,
+        features: [
+            "Salvataggio locale dei dati",
+            "Invio di notifiche programmate",
+            "Segno tramite tavolozza tipo Paint"
+        ],
+        challenges: "Implementare un sistema di sheduling delle notifiche che potesse facilmente venir aggiornato all'esigenza",
+        outcome: "App Android funzionante e pubblicata sul PlayStore"
+    },
     {
         slug: "roujutsu",
         title: "Sito Roujutsu",
@@ -127,7 +156,6 @@ export const projects = [
         challenges: "Configurare Strapi per rendere l'aggiunta e modifica di pagine ultra-semplice, integrando dati dinamici nella sezione quiz React mantenendo performance ottimali.",
         outcome: "Piattaforma scalabile e user-friendly, ideale per contenuti dinamici con manutenzione minima grazie al CMS headless."
     },
-    // App presenze palestra ottobre 2024
     {
         slug: "rilevatore-presenze",
         title: "App per segnare le presenze tramite lettore NFC",
@@ -143,6 +171,8 @@ export const projects = [
         description: "Creazione di un'app Android nativa che tramite un lettore NFC rilevasse le entrate e uscite, e comunicasse tutti i dati tramite chiamate API",
         images: [
             "/rilevatore-presenze/1.png",
+            "/rilevatore-presenze/2.png",
+            "/rilevatore-presenze/3.png",
         ],
         fullDescription: "Creazione di un'app Android nativa che tramite un lettore NFC rilevasse le entrate e uscite da una palestra, il sistema è progettato per garantire il funzionamento anche offline, e sincronizzarsi con il server una volta disponibile la connessione tramite chiamate API",
         githubUrl: false,
