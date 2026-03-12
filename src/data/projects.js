@@ -2,7 +2,41 @@ import { TAGS } from "./languages";
 
 export const projects = [
     // Febbraio 2026 Prontoemergenza?
-    // gennaio 2026 FinanceDashoard
+    {
+        slug: "finance-dashboard",
+        title: "Dashboard finanziaria",
+        period: "2026-01",
+        periodDisplay: "Gennaio 2026",
+        previewImage: "/finance-dashboard/1.png",
+        tags: [
+            TAGS.NEXTJS,
+            TAGS.JSON,
+            TAGS.NODEJS,
+            TAGS.MYSQL,
+            TAGS.TAILWINDCSS
+        ],
+        isPublished: false,
+        liveUrl: null,
+        description: "Dashboard per tenere sotto controllo le proprie finanze e investimenti",
+        images: [
+            "/finance-dashboard/1.png",
+            "/finance-dashboard/2.png",
+            "/finance-dashboard/3.png",
+            "/finance-dashboard/4.png",
+            "/finance-dashboard/5.png",
+            "/finance-dashboard/6.png"
+        ],
+        fullDescription: "Una dashboard, nata dalla necessità di monitorare le mie entrate/uscite e i miei investimenti, consente di gestire più conti correnti di diverso tipo",
+        githubUrl: null,
+        features: [
+            "Visuale Dare/Avere",
+            "Grafici dinamici di entrate e uscite",
+            "Timeline interattiva della storia",
+            "Galleria eventi"
+        ],
+        challenges: "Gestire più conti con trasferimenti interni e gestire i vari tipi di investimenti",
+        outcome: "Dashboard moderna e funzionale"
+    },
     {
         slug: "birolixcostruire",
         title: "Sito Biroli X Costruire",
