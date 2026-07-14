@@ -1,6 +1,34 @@
 import { TAGS } from "./languages";
 
 export const projects = [
+
+    {
+        slug: "carnovali-iperammortamento",
+        title: "Landigpage Iperammortamento",
+        period: "2026-06",
+        periodDisplay: "Giugno 2026",
+        previewImage: "/carnovali-iperammortamento/1.png",
+        tags: [
+            TAGS.NEXTJS,
+            TAGS.NODEJS
+        ],
+        isPublished: true,
+        liveUrl: "https://iperammortamento.carpenteriacarnovali.it/",
+        description: "Landipage per gestire il calcolo dell'iperammortamento per l'azienda Carnovali S.p.a.",
+        images: [
+            "/carnovali-iperammortamento/1.png",
+            "/carnovali-iperammortamento/2.png",
+        ],
+        fullDescription: "Realizzazione di una landing page esplicativa dei vantaggi fiscali  nello sfruttare l'iperammortamento, realizzata in collaborazione con l'azienda Carnovali S.p.a.",
+        githubUrl: null,
+        features: [
+            "Calcolo dei vantaggi fiscali",
+            "Dettaglio anno per anno dei contributi deducibili",
+        ],
+        challenges: "Gestire il calcolo finanziario",
+        outcome: "Sito moderno e funzionante"
+    },
+
     // Febbraio 2026 Prontoemergenza?
     {
         slug: "finance-dashboard",
