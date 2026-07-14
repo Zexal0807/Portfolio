@@ -4,7 +4,7 @@ export const projects = [
 
     {
         slug: "carnovali-iperammortamento",
-        title: "Landigpage Iperammortamento",
+        title: "Landingpage Iperammortamento",
         period: "2026-06",
         periodDisplay: "Giugno 2026",
         previewImage: "/carnovali-iperammortamento/1.png",
@@ -14,7 +14,7 @@ export const projects = [
         ],
         isPublished: true,
         liveUrl: "https://iperammortamento.carpenteriacarnovali.it/",
-        description: "Landipage per gestire il calcolo dell'iperammortamento per l'azienda Carnovali S.p.a.",
+        description: "Landingpage per gestire il calcolo dell'iperammortamento per l'azienda Carnovali S.p.a.",
         images: [
             "/carnovali-iperammortamento/1.png",
             "/carnovali-iperammortamento/2.png",
